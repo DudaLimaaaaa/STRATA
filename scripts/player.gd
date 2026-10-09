@@ -57,11 +57,19 @@ func _physics_process(delta: float) -> void:
 		fell.emit()
 
 func _draw() -> void:
-	# Expedicionária temporária em silhueta; substituível por sprite.
-	draw_circle(Vector2(0, -40), 12, Color("#e4b184"))
-	draw_rect(Rect2(-13, -29, 26, 31), Color("#d5e1d7"), true)
-	draw_rect(Rect2(-13, -8, 10, 20), Color("#334a50"), true)
-	draw_rect(Rect2(3, -8, 10, 20), Color("#334a50"), true)
-	draw_rect(Rect2(-19, -29, 38, 5), Color("#d99052"), true)
-	draw_circle(Vector2(0, -42), 2.2, Color("#102c37"))
+	# Exploradora de campo com mochila, casaco ocre e detalhes de equipamento.
+	draw_rect(Rect2(-16, -28, 12, 24), Color("#38464a"), true)
+	draw_rect(Rect2(4, -28, 12, 24), Color("#38464a"), true)
+	draw_line(Vector2(-12,-5),Vector2(-17,0),Color("#252f31"),6.0,true)
+	draw_line(Vector2(10,-5),Vector2(16,0),Color("#252f31"),6.0,true)
+	draw_rect(Rect2(-18,-49,36,29),Color("#c27a35"),true)
+	draw_rect(Rect2(-24,-47,12,27),Color("#465355"),true)
+	draw_rect(Rect2(11,-45,12,23),Color("#596263"),true)
+	draw_rect(Rect2(-9,-45,5,22),Color("#f0c16d"),true)
+	draw_line(Vector2(-17,-38),Vector2(18,-38),Color("#f0c16d"),3.0,true)
+	draw_circle(Vector2(0,-58),11,Color("#d99b6d"))
+	draw_rect(Rect2(-12,-66,24,6),Color("#3a302b"),true)
+	draw_colored_polygon(PackedVector2Array([Vector2(-15,-64),Vector2(0,-72),Vector2(16,-64)]),Color("#4a3930"))
+	draw_line(Vector2(17,-34),Vector2(27,-10),Color("#d6d1c4"),3.0,true)
+	draw_circle(Vector2(0,-58),1.8,Color("#332b28"))
 
