@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5850" height="900" viewBox="-400 0 5850 900">
+<defs>
+  <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#277fc2"/><stop offset=".42" stop-color="#68b8e8"/><stop offset="1" stop-color="#c8e4ec"/></linearGradient>
+  <linearGradient id="farRock" x2="0" y2="1"><stop stop-color="#a6c5d3"/><stop offset="1" stop-color="#527a91"/></linearGradient>
+  <linearGradient id="nearRock" x2="0" y2="1"><stop stop-color="#877c70"/><stop offset=".28" stop-color="#69594d"/><stop offset="1" stop-color="#3b3533"/></linearGradient>
+  <linearGradient id="snow" x2="0" y2="1"><stop stop-color="#fffdf2"/><stop offset="1" stop-color="#b8d5e3"/></linearGradient>
+  <linearGradient id="water" x2="0" y2="1"><stop stop-color="#40bad2"/><stop offset="1" stop-color="#126a91"/></linearGradient>
+  <radialGradient id="caveGlow"><stop stop-color="#fff0a5"/><stop offset=".25" stop-color="#ffc34f"/><stop offset="1" stop-color="#7d391b"/></radialGradient>
+  <pattern id="strata" width="94" height="62" patternUnits="userSpaceOnUse">
+    <path d="M-12 17 Q15 2 44 12 T102 7 M-8 45 Q22 32 52 42 T102 34" fill="none" stroke="#d1a873" stroke-width="5" opacity=".34"/>
+    <path d="M5 28l13-7 17 5-8 11-16 2z M64 55l11-12 17 4-5 12z" fill="#302d2d" opacity=".36"/>
+  </pattern>
+  <g id="cloud" fill="#eff8fa" opacity=".56"><ellipse cx="0" cy="0" rx="64" ry="17"/><ellipse cx="-24" cy="-7" rx="27" ry="21"/><ellipse cx="17" cy="-13" rx="36" ry="25"/><ellipse cx="48" cy="-4" rx="27" ry="18"/></g>
+  <g id="shrub"><path d="M0 0l-8-24 5 3-1-19 10 18 7-18 1 27 10-15-5 28z" fill="#526c42"/><path d="M0 0l-16-18m17 14 13-18" stroke="#9b8e4e" stroke-width="3"/><circle cx="-9" cy="-8" r="4" fill="#c56743"/><circle cx="12" cy="-5" r="4" fill="#da7b48"/></g>
+</defs>
+<!-- Luz fria de manhã sobre a Patagônia -->
+<rect x="-400" width="5850" height="900" fill="url(#sky)"/>
+<circle cx="3280" cy="108" r="73" fill="#fff2c5" opacity=".42"/><circle cx="3280" cy="108" r="43" fill="#fff7d8" opacity=".7"/>
+<use href="#cloud" x="95" y="130"/><use href="#cloud" x="495" y="82"/><use href="#cloud" x="930" y="160"/><use href="#cloud" x="1590" y="105"/><use href="#cloud" x="2210" y="145"/><use href="#cloud" x="2870" y="80"/><use href="#cloud" x="3680" y="155"/><use href="#cloud" x="4230" y="94"/><use href="#cloud" x="5100" y="145"/>
+<!-- Silhuetas de montanhas distantes -->
+<path d="M-400 480  -260 360 -140 397 -20 258 94 340 218 174 320 300 475 105 594 323 740 173 855 329 1010 118 1172 354 1308 202 1468 374 1634 120 1782 337 1940 142 2095 360 2240 173 2415 345 2574 92 2730 327 2890 175 3066 345 3250 112 3415 330 3560 156 3735 353 3910 104 4050 332 4214 164 4370 350 4528 90 4694 310 4868 130 5020 343 5190 166 5352 364 5450 258 5450 570 -400 570Z" fill="url(#farRock)"/>
+<!-- Neve e faces iluminadas das cristas -->
+<g fill="url(#snow)">
+ <path d="M-20 258l114 82-36-8-60 18 22-24zM218 174l102 126-40-19-47 9-34 35-5-35zM475 105l119 218-55-47-38 8-47-41-38 26 25-50zM740 173l115 156-48-23-35 6-32 29-9-37zM1010 118l162 236-58-54-42 11-49-37-45 34 22-66zM1308 202l160 172-54-20-31 20-52-35-31 29 8-42zM1634 120l148 217-69-40-37 14-50-39-43 29 19-57zM1940 142l155 218-52-43-41 11-56-36-38 30 16-51zM2240 173l175 172-55-29-42 13-50-29-40 27 10-49zM2574 92l156 235-58-53-42 12-45-43-45 30 16-57zM2890 175l176 170-56-29-48 15-43-32-44 27 9-48zM3250 112l165 218-68-48-41 16-44-38-44 30 18-58zM3560 156l175 197-54-31-45 14-51-33-38 27 11-45zM3910 104l140 228-58-43-45 17-43-37-49 31 21-62zM4214 164l156 186-54-29-40 16-50-33-38 30 11-51zM4528 90l166 220-59-50-44 14-43-38-44 31 18-61zM4868 130l152 213-60-44-43 13-50-34-38 31 14-58zM5190 166l162 198-49-33-47 12-40-30-50 27 13-47z"/>
+</g>
+<g fill="none" stroke="#eff8f5" stroke-width="8" opacity=".62">
+ <path d="M116 337l35-42 25 34m75-112 29 41 43-5m106 56 44-52 33 17m358 52 39-53 42 26m161 27 56-48 39 20m225 27 45-47 43 17m284 26 46-47 45 21m266 22 48-53 49 27m255 25 54-52 38 20m260 30 51-55 44 23m286 28 42-48 39 22m300 23 47-50 44 24"/>
+</g>
+<!-- Florestas baixas e paredões no meio do vale -->
+<path d="M-400 493q165-60 336-5t335-10q180-82 360 4t366 0q165-80 344-8t342-1q174-64 340 1t340 0q190-82 373-2t366-4q168-76 337-3t360 0q187-62 371 12t380-12v140H-400Z" fill="#496c6e"/>
+<path d="M-400 515q200-50 380 12t360-4q205-58 408 7t385-8q193-50 383 6t387-5q200-48 397 4t398-7q195-62 385 1t398 4v112H-400Z" fill="#315b5d" opacity=".8"/>
+<!-- Rio azul glacial correndo no desfiladeiro -->
+<path d="M-400 543q198 25 388 0t382 14q208 31 391 1t378 1q196 27 389 0t380 8q184 31 381-4t391 1q188 28 379-8t391 14v112H-400Z" fill="url(#water)"/>
+<g fill="none" stroke="#d8f4ee" stroke-linecap="round" opacity=".78">
+ <path d="M-280 582q80-16 155 1m40 24q94-18 174 0m86-32q71-13 148 2m210 47q110-19 191 1m82-41q85-15 155 0m142 54q95-16 180 2m168-45q75-17 155 1m155 40q95-15 172 1m193-54q87-15 159 1m115 50q96-19 185 1m165-41q80-12 154 3m111 54q95-19 177 1m153-54q93-16 165 2m119 48q93-13 161 1m139-43q90-15 170 2" stroke-width="7"/>
+ <path d="M-220 620l44 5m330-38 48 6m430 49 52 4m301-59 46 5m366 55 48 6m372-42 46 4m411 46 53 5m280-60 42 4m402 54 52 5" stroke-width="4"/>
+</g>
+<!-- Penhascos e passarelas naturais em trechos do percurso -->
+<g>
+ <path d="M-400 570h2600v330H-400Z M2380 570h240v330h-240Z M2700 570h410v330h-410Z M3480 570h1470v330H3480Z" fill="url(#nearRock)"/>
+ <path d="M-400 570h2600v330H-400Z M2380 570h240v330h-240Z M2700 570h410v330h-410Z M3480 570h1470v330H3480Z" fill="url(#strata)" opacity=".7"/>
+ <path d="M-400 570q160-20 312 2t304-3q170-15 320 4t309-2q168-17 334 1t321 1q177-18 330-1t370-1v22H-400Z M2380 570q70-17 119-1t121-2v24h-240Z M2700 570q123-18 218 0t192-2v23h-410Z M3480 570q183-17 352-1t317-2q171-17 336 0t465-3v26H3480Z" fill="#d4c2a1"/>
+ <path d="M-400 593q150-10 300 6t304-5m66-2q144-12 300 4t300-3m330-1q164-13 310 4t310-2m450-1q173-13 330 3t320-2m-1050 0q98-12 195 2t210-2m-2150 0q108-13 212 2t195-3" fill="none" stroke="#f1dfbd" stroke-width="5" opacity=".72"/>
+</g>
+<!-- Patamares altos da rota alternativa -->
+<g fill="url(#nearRock)" stroke="#d4c2a1" stroke-width="9">
+ <path d="M1920 452q64-12 126 0t134-4v83h-260z"/><path d="M2180 390q103-14 197 2t153-3v75h-350z"/><path d="M2520 345q116-13 219 1t211-4v82h-430z"/><path d="M2940 390q85-10 145 1t135-3v78h-280z"/><path d="M3190 445q83-12 142 1t128-2v65h-270z"/><path d="M4740 520q105-14 174 1t171-4v90h-350z"/>
+</g>
+<g fill="url(#strata)" opacity=".65">
+ <path d="M1920 452h260v79h-260zM2180 390h350v70h-350zM2520 345h430v78h-430zM2940 390h280v74h-280zM3190 445h270v64h-270zM4740 520h350v86h-350z"/>
+</g>
+<!-- Estação de pesquisa de madeira, antena e bandeira ao vento -->
+<g transform="translate(-125 0)" stroke-linejoin="round">
+ <path d="M455 414V264l26-24h143l28 24v150Z" fill="#a64832" stroke="#553c34" stroke-width="9"/>
+ <path d="M442 266l111-32 116 32Z" fill="#d88953" stroke="#533a32" stroke-width="8"/>
+ <path d="M469 282h37v38h-37zm59 0h36v38h-36zm58 0h36v38h-36z" fill="#9ed2d7" stroke="#eee3c9" stroke-width="6"/>
+ <path d="M469 334h37v38h-37zm59 0h36v38h-36zm58 0h36v38h-36z" fill="#8bc2ce" stroke="#eee3c9" stroke-width="6"/>
+ <path d="M511 414v-33h38v33M444 378h211" fill="none" stroke="#e1bd87" stroke-width="8"/>
+ <path d="M454 414l-28 156m230-156 29 156m-255-34h284" fill="none" stroke="#473b35" stroke-width="11"/>
+ <path d="M535 233v-97m0 16 28-9m-28 9-26 13m39-18 18 15" fill="none" stroke="#564d47" stroke-width="7"/>
+ <path d="M536 140q44 2 76 24l-70 20Z" fill="#fff0d7"/><path d="M536 140l28 2-24 19Z" fill="#df6a45"/>
+</g>
+<!-- Rochas menores com faces de luz e tufos de vegetação -->
+<g fill="#78634e" stroke="#4c4039" stroke-width="4">
+ <path d="M60 568l15-28 26-9 21 22 27 2 16 17zM220 568l22-30 31-7 24 19 25 2 13 16zM725 568l18-28 35-11 26 21 21 1 14 17zM1430 568l15-26 32-13 29 23 25 1 11 15zM1800 568l19-28 35-11 28 23 25 2 13 14zM3600 568l20-31 40-7 28 24 31 1 15 13zM4160 568l20-25 32-12 26 20 28 2 13 15z"/>
+</g>
+<g><use href="#shrub" x="74" y="568"/><use href="#shrub" x="190" y="568"/><use href="#shrub" x="820" y="568"/><use href="#shrub" x="1170" y="568"/><use href="#shrub" x="1340" y="568"/><use href="#shrub" x="1730" y="568"/><use href="#shrub" x="2020" y="450"/><use href="#shrub" x="2590" y="344"/><use href="#shrub" x="3040" y="389"/><use href="#shrub" x="3760" y="568"/><use href="#shrub" x="3990" y="568"/><use href="#shrub" x="4660" y="568"/></g>
+<!-- Guanaco como elemento de ambiente, desenhado à mão em planos quentes -->
+<g transform="translate(850 566)" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M-55-50q-30-31-17-60l15-21 13 21 12 17q44-39 90-18 32 14 40 46l-24 20-63 13-49-9-17 35h-10l4-43-20 51h-10l5-53-26 44h-11l10-53-20 21-8-7z" fill="#b95f35" stroke="#633d2e" stroke-width="6"/>
+ <path d="M-71-95l5-30 16 11 10 27zM-30-91l6-31 15 19 1 27z" fill="#d98d59" stroke="#633d2e" stroke-width="5"/>
+ <path d="M-55-50q32 9 66 4 37-5 64-19l22 9-22 20-63 15-51-8-16 35h-9l3-43-19 51h-10l5-54-26 44h-11l10-54-19 20-9-7z" fill="#e7b080" opacity=".8"/>
+ <path d="M38-60l12 4m17-12 11 3m-90-8 10 5m-35 6 9 5" stroke="#f7d0a0" stroke-width="5"/>
+ <circle cx="-59" cy="-111" r="4" fill="#241c1a" stroke="none"/><path d="M-91-98q-10-7-16 2" fill="none" stroke="#3c2823" stroke-width="6"/>
+</g>
+<!-- Primeira vista da caverna no penhasco da abertura -->
+<path d="M930 567q14-89 78-109 41-76 112-42 70-52 139-1 104-7 152 78v74z" fill="#625043" stroke="#393333" stroke-width="10"/>
+<path d="M958 568q22-52 73-65 26-54 87-30 45-46 103-4 70-5 121 54v46z" fill="#302a29"/>
+<circle cx="1188" cy="510" r="35" fill="url(#caveGlow)" opacity=".8"/>
+<path d="M1188 510c20-2 21-24 5-30-18-6-33 13-24 29 11 22 44 18 52-3 11-28-13-52-40-48-33 4-48 44-31 70 21 32 72 26 88-6" fill="none" stroke="#ffe899" stroke-width="6" stroke-linecap="round"/>
+<!-- Entrada da caverna e fóssil espiral no trecho final -->
+<path d="M4740 560q24-93 117-119 79-118 199-48 90-68 188 18 142-5 206 149v84h-710z" fill="#59463b" stroke="#3b3330" stroke-width="10"/>
+<path d="M4760 570q37-66 107-79 37-84 126-42 69-76 150-9 112-20 170 97v48h-553z" fill="#2f2a2a"/>
+<circle cx="5018" cy="486" r="60" fill="url(#caveGlow)" opacity=".78"/><circle cx="5018" cy="486" r="39" fill="none" stroke="#ffd05b" stroke-width="9"/>
+<path d="M5018 486c31-2 32-37 8-45-27-8-48 19-35 44 16 31 64 27 76-4 15-40-20-77-59-72-49 6-72 63-47 101 30 47 103 39 126-8" fill="none" stroke="#ffe899" stroke-width="8" stroke-linecap="round"/>
+<path d="M4810 574l31-43 40 22 30-39 41 37m188 20 31-46 35 25 35-44 48 47" fill="none" stroke="#987552" stroke-width="8" opacity=".85"/>
+<!-- Textura de pinceladas, neve e cascalho em primeiro plano -->
+<g fill="none" stroke-linecap="round" opacity=".6">
+ <path d="M25 588l30-8m124 24 34-9m210 4 24-8m294 3 31-11m255 20 41-10m192 0 28-8m640 1 35-10m340 19 27-7m460 3 32-10m350 9 34-9m300 13 32-10m262 5 29-8m190 13 36-10m350 9 29-8" stroke="#f1d8aa" stroke-width="6"/>
+ <path d="M80 666l17-5m253 28 28-8m184 42 21-6m335-32 19-6m233 39 24-7m272-38 27-7m370 42 24-7m290-31 23-7m364 42 20-6m343-33 25-7m310 43 22-6m224-37 24-7" stroke="#d1a879" stroke-width="5"/>
+</g>
+</svg>
+
