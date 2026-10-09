@@ -206,7 +206,7 @@ func show_message(text: String) -> void:
 	message_time = 3.5
 
 func update_hazards(delta: float) -> void:
-	var x := player.global_position.x
+	var x: float = player.global_position.x
 	var zones := [{"id":"valley", "x":1670.0, "start":1390.0, "end":1770.0}, {"id":"low_route", "x":3000.0, "start":2820.0, "end":3120.0}]
 	rock_warning = false
 	for zone in zones:
