@@ -58,6 +58,7 @@ func _physics_process(delta: float) -> void:
 
 func _draw() -> void:
 	# Exploradora de campo com mochila, casaco ocre e detalhes de equipamento.
+	draw_set_transform(Vector2.ZERO, 0.0, Vector2(2.0, 2.0))
 	draw_rect(Rect2(-16, -28, 12, 24), Color("#38464a"), true)
 	draw_rect(Rect2(4, -28, 12, 24), Color("#38464a"), true)
 	draw_line(Vector2(-12,-5),Vector2(-17,0),Color("#252f31"),6.0,true)
@@ -72,4 +73,5 @@ func _draw() -> void:
 	draw_colored_polygon(PackedVector2Array([Vector2(-15,-64),Vector2(0,-72),Vector2(16,-64)]),Color("#4a3930"))
 	draw_line(Vector2(17,-34),Vector2(27,-10),Color("#d6d1c4"),3.0,true)
 	draw_circle(Vector2(0,-58),1.8,Color("#332b28"))
+	draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 
