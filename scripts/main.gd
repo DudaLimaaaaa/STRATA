@@ -29,7 +29,7 @@ var message := ""
 var message_time := 0.0
 
 var interactables := [
-	{"id":"station", "pos":Vector2(1020, GROUND_Y), "radius":90.0},
+	{"id":"station", "pos":Vector2(420, GROUND_Y), "radius":90.0},
 	{"id":"lookout", "pos":Vector2(2880, 340), "radius":100.0},
 	{"id":"fossil", "pos":Vector2(5040, 450), "radius":100.0},
 ]
@@ -46,17 +46,23 @@ func create_player() -> void:
 	player.fell.connect(respawn)
 	add_child(player)
 	camera = Camera2D.new()
-	camera.position = Vector2(0, -260)
+	camera.position = Vector2(376, -160)
+	camera.zoom = Vector2(0.85, 0.85)
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 5.0
-	camera.limit_left = 0
+	camera.limit_left = -227
 	camera.limit_right = int(WORLD_END)
-	camera.limit_top = 0
-	camera.limit_bottom = 720
+	camera.limit_top = -13
+	camera.limit_bottom = 1200
 	player.add_child(camera)
 	camera.make_current()
 
 func create_world() -> void:
+	var panorama := Sprite2D.new()
+	panorama.texture = load("res://assets/patagonia.svg")
+	panorama.position = Vector2(2525, 450)
+	panorama.z_index = -10
+	add_child(panorama)
 	# Um corredor de reencontro conduz à mesma descoberta pelas duas rotas.
 	platform(0, GROUND_Y, 2200, 300)
 	platform(2380, GROUND_Y, 240, 300)
@@ -241,7 +247,7 @@ func interact(id: String) -> void:
 	match id:
 		"station":
 			station_found = true
-			checkpoint = Vector2(1110, GROUND_Y)
+			checkpoint = Vector2(510, GROUND_Y)
 			objective_label.text = "Registro da estação recuperado · siga pelo vale"
 			show_message("Último registro: o sítio fica além do vale.")
 		"lookout":
@@ -432,71 +438,13 @@ func _build_center_panel(panel: PanelContainer, heading: String, subheading: Str
 	box.add_child(button)
 
 func _draw() -> void:
-	# Céu azul patagônico, cadeias de montanhas nevadas e vale glacial em planos.
-	draw_rect(Rect2(0, 0, WORLD_END, 720), Color("#55a6df"), true)
-	for i in range(8):
-		var x := float(i) * 780.0 - 120.0
-		var peak := 160.0 + float((i * 41) % 110)
-		var ridge := PackedVector2Array([Vector2(x, 420), Vector2(x+170, peak+90), Vector2(x+240, peak), Vector2(x+310, peak+86), Vector2(x+490, 410), Vector2(x+700, peak+50), Vector2(x+780, 420), Vector2(x+780, 570), Vector2(x,570)])
-		draw_colored_polygon(ridge, Color("#dce9ef"))
-		draw_colored_polygon(PackedVector2Array([Vector2(x+170, peak+90),Vector2(x+240,peak),Vector2(x+310,peak+86),Vector2(x+270,peak+64),Vector2(x+242,peak+82),Vector2(x+215,peak+65)]), Color("#f7f5ec"))
-		draw_colored_polygon(PackedVector2Array([Vector2(x,420),Vector2(x+170,peak+90),Vector2(x+100,430),Vector2(x+300,570),Vector2(x,570)]), Color("#84a9b8"))
-	# Nuvens leves e serras distantes para dar escala à travessia.
-	for i in range(24):
-		var cx := float(i) * 260.0 + 55.0
-		var cy := float(72 + (i * 29) % 120)
-		draw_circle(Vector2(cx,cy), 21, Color(0.94,0.97,1.0,0.18))
-		draw_circle(Vector2(cx+23,cy+4), 15, Color(0.94,0.97,1.0,0.16))
-	# Lago glacial turquesa entre os paredões.
-	draw_colored_polygon(PackedVector2Array([Vector2(0,525),Vector2(620,492),Vector2(1450,515),Vector2(2050,485),Vector2(2600,530),Vector2(3320,490),Vector2(4100,520),Vector2(5450,475),Vector2(5450,590),Vector2(0,590)]), Color("#278dad"))
-	for i in range(34):
-		var wx := float(i) * 170.0 + 30.0
-		var wy := 520.0 + float((i * 17) % 47)
-		draw_line(Vector2(wx,wy),Vector2(wx+54,wy-3),Color(0.72,0.92,0.95,0.46),2.0,true)
-	# Parede rochosa irregular, com faces quentes e neve acumulada nas bordas.
-	for rect in [Rect2(0,570,2200,300), Rect2(2380,570,240,300), Rect2(2700,570,410,300), Rect2(3480,570,470,300), Rect2(3920,570,1530,300)]:
-		draw_rect(rect, Color("#52443c"), true)
-		draw_rect(Rect2(rect.position.x, rect.position.y, rect.size.x, 9), Color("#b8a487"), true)
-		for i in range(int(rect.size.x / 78.0)):
-			var rx: float = rect.position.x + float(i) * 78.0 + float((i * 23) % 27)
-			var ry := 592.0 + float((i * 31) % 138)
-			draw_colored_polygon(PackedVector2Array([Vector2(rx,ry),Vector2(rx+25,ry-17),Vector2(rx+52,ry+3),Vector2(rx+39,ry+28),Vector2(rx+9,ry+32)]), Color("#705a4b"))
-			draw_line(Vector2(rx+4,ry+2),Vector2(rx+24,ry-12),Color("#a48567",0.65),2.0,true)
-	for rect in [Rect2(1920,452,260,35), Rect2(2180,390,350,35), Rect2(2520,345,430,35), Rect2(2940,390,280,35), Rect2(3190,445,270,35), Rect2(4740,520,350,50)]:
-		draw_rect(rect, Color("#665043"), true)
-		draw_rect(Rect2(rect.position.x,rect.position.y,rect.size.x,7),Color("#d1bd9b"),true)
-	# Estação de pesquisa em madeira e metal no penhasco.
-	draw_rect(Rect2(950, 430, 155, 140), Color("#7d4435"), true)
-	draw_rect(Rect2(938, 420, 180, 18), Color("#d38e5c"), true)
-	for wx in [965.0, 1012.0, 1060.0]:
-		draw_rect(Rect2(wx,450,29,31),Color("#90c5d0"),true)
-		draw_line(Vector2(wx+14,450),Vector2(wx+14,481),Color("#eee5d0"),3.0,true)
-		draw_rect(Rect2(wx,450,29,3),Color("#eee5d0"),true)
-	draw_rect(Rect2(994, 493, 43, 77), Color("#3c3534"), true)
-	# Pernas e vigas sobre a encosta, com bandeirola de vento.
-	for bx in [960.0, 1093.0]:
-		draw_line(Vector2(bx,535),Vector2(bx-18,570),Color("#493c35"),8.0,true)
-		draw_line(Vector2(bx+22,535),Vector2(bx+40,570),Color("#493c35"),8.0,true)
-	draw_line(Vector2(1125,410),Vector2(1125,330),Color("#54483e"),5.0,true)
-	draw_colored_polygon(PackedVector2Array([Vector2(1126,332),Vector2(1190,344),Vector2(1128,359)]),Color("#f5eee1"))
-	draw_colored_polygon(PackedVector2Array([Vector2(1126,332),Vector2(1157,338),Vector2(1130,345)]),Color("#de754b"))
-	# Rota alta: corrimão/mirante e fita de segurança nos setores de queda.
-	draw_rect(Rect2(2670, 300, 4, 45), Color("#dfbd82"), true)
-	draw_rect(Rect2(2668, 300, 108, 3), Color("#dfbd82"), true)
 	if rock_warning:
-		var warning_x := 3000.0 if float(hazard_timers["low_route"]) > 0.0 else 1670.0
-		draw_circle(Vector2(warning_x, 515), 38, Color(0.96,0.59,0.28,0.24))
-		draw_string(ThemeDB.fallback_font, Vector2(warning_x - 9.0, 468), "!", HORIZONTAL_ALIGNMENT_LEFT, -1, 38, Color("#f4cb83"))
+		var warning_x: float = 3000.0 if float(hazard_timers["low_route"]) > 0.0 else 1670.0
+		draw_colored_polygon(PackedVector2Array([Vector2(warning_x - 21, 508), Vector2(warning_x, 470), Vector2(warning_x + 21, 508)]), Color("#e73f37"))
+		draw_string(ThemeDB.fallback_font, Vector2(warning_x - 6, 501), "!", HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color.WHITE)
 		var remaining: float = maxf(0.0, float(hazard_timers["low_route"] if warning_x == 3000.0 else hazard_timers["valley"]))
-		var rock_y := 260.0 + (1.8 - remaining) * 130.0
-		draw_rect(Rect2(warning_x - 17.0, rock_y, 34, 30), Color("#b18d66"), true)
-	# Reentrância de arenito iluminada, com o fóssil em ouro.
-	draw_colored_polygon(PackedVector2Array([Vector2(4840,520),Vector2(4880,440),Vector2(4950,395),Vector2(5030,405),Vector2(5100,465),Vector2(5115,520)]),Color("#a26535"))
-	draw_circle(Vector2(4990,460),49,Color("#382d28"))
-	draw_circle(Vector2(4990,460),38,Color("#a76420"))
-	draw_arc(Vector2(4990,460), 29, 0, TAU * 1.7, 48, Color("#ffcf61"), 7.0, true)
-	draw_arc(Vector2(4990,460), 14, 0, TAU * 1.45, 40, Color("#ffe6a0"), 4.0, true)
-	draw_rect(Rect2(4870, 495, 240, 10), Color("#cfad79"), true)
+		var rock_y: float = 260.0 + (1.8 - remaining) * 130.0
+		draw_colored_polygon(PackedVector2Array([Vector2(warning_x - 18, rock_y + 21), Vector2(warning_x - 11, rock_y), Vector2(warning_x + 5, rock_y - 8), Vector2(warning_x + 19, rock_y + 5), Vector2(warning_x + 13, rock_y + 22)]), Color("#80644d"))
 	if message_time > 0.0 and screen == "playing":
-		draw_string(ThemeDB.fallback_font, Vector2(player.global_position.x, player.global_position.y - 100), message, HORIZONTAL_ALIGNMENT_CENTER, 500, 17, Color("#f3d79d"))
+		draw_string(ThemeDB.fallback_font, Vector2(player.global_position.x, player.global_position.y - 145), message, HORIZONTAL_ALIGNMENT_CENTER, 500, 17, Color("#fff0cf"))
 
