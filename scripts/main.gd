@@ -458,7 +458,7 @@ func _draw() -> void:
 		draw_rect(rect, Color("#52443c"), true)
 		draw_rect(Rect2(rect.position.x, rect.position.y, rect.size.x, 9), Color("#b8a487"), true)
 		for i in range(int(rect.size.x / 78.0)):
-			var rx := rect.position.x + float(i) * 78.0 + float((i * 23) % 27)
+			var rx: float = rect.position.x + float(i) * 78.0 + float((i * 23) % 27)
 			var ry := 592.0 + float((i * 31) % 138)
 			draw_colored_polygon(PackedVector2Array([Vector2(rx,ry),Vector2(rx+25,ry-17),Vector2(rx+52,ry+3),Vector2(rx+39,ry+28),Vector2(rx+9,ry+32)]), Color("#705a4b"))
 			draw_line(Vector2(rx+4,ry+2),Vector2(rx+24,ry-12),Color("#a48567",0.65),2.0,true)
